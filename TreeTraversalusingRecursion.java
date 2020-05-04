@@ -26,6 +26,7 @@ class Tree{
 	Node root;
 	Node p;
 	public void create(){
+		//first we insert the rooot element
 		System.out.println("Enter the Root data");
 		root=new Node(sc.nextInt());
 		Queue q=new Queue();
@@ -33,6 +34,7 @@ class Tree{
 		int x;
 		while(!q.isEmpty()){
 			p=q.dequeue();
+			//insert the element at left side
 			System.out.println("Enter the Left Child of "+p.data);
 			x=sc.nextInt();
 			if(x!=-1){
@@ -40,6 +42,7 @@ class Tree{
 				p.lchild=t;
 				q.enqueue(t);
 			}
+			//insert the element at right side
 			System.out.println("Enter the Right Child of "+p.data);
 			x=sc.nextInt();
 			if(x!=-1){
@@ -49,6 +52,7 @@ class Tree{
 			}
 		}
 	}
+	//return the Address of root
 	public Node root(){
 		return root;
 	}
@@ -67,9 +71,11 @@ class Tree{
 		}
 	}
 }
+//Queue Class
 class Queue{
 	Node1 front;
 	Node1 rear;
+	//inserting the address in queue
 	public void enqueue(Node data){
 		Node1 node1=new Node1();
 		if (node1==null){
@@ -86,6 +92,7 @@ class Queue{
 			}
 		}
 	}
+	//Deleting the address in queue
 	public Node dequeue(){
 		Node x=null;
 		if(front==null){
@@ -97,6 +104,7 @@ class Queue{
 			t=null;
 		}return x;
 	}
+	//Check it is empty or not
 	public boolean isEmpty(){
 		if (front==null)
 			return true;
